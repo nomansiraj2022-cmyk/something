@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #5d247f 0%, #24103b 35%, #08050d 75%);
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* STARS */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: fixed;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.35;
+    animation: moveStars 15s linear infinite;
+}
+
+.stars::before {
+    background-image:
+        radial-gradient(circle, #d8a8ff 1px, transparent 1px);
+    background-size: 130px 130px;
+    opacity: 0.4;
+}
+
+.stars::after {
+    background-image:
+        radial-gradient(circle, #ffffff 1px, transparent 1px);
+    background-size: 200px 200px;
+    opacity: 0.3;
+}
+
+@keyframes moveStars {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(80px);
+    }
+}
+
+
+/* MAIN */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 35px 20px 50px;
+
+    text-align: center;
+}
+
+
+.top-text {
+    font-size: 13px;
+    letter-spacing: 5px;
+
+    color: #dcb4ff;
+
+    margin-bottom: 18px;
+}
+
+
+h1 {
+    font-size: clamp(38px, 8vw, 70px);
+
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d8a4ff,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.intro {
+    color: #d8cbe3;
+    font-size: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+/* BTS CARD */
+
+.bts-card {
+    position: relative;
+
+    width: 100%;
+    height: 390px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 30px rgba(157, 70, 255, 0.35),
+        0 0 80px rgba(157, 70, 255, 0.15);
+}
+
+
+.bts-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 4, 15, 0.95),
+            rgba(20, 5, 35, 0.1)
+        );
+}
+
+
+.card-content {
+    position: absolute;
+
+    bottom: 30px;
+    left: 0;
+    right: 0;
+
+    z-index: 2;
+}
+
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 5px;
+
+    color: #d5a5ff;
+}
+
+
+.card-content h2 {
+    font-size: 50px;
+
+    margin: 8px 0;
+
+    letter-spacing: 8px;
+}
+
+
+.location {
+    color: #eee;
+}
+
+
+/* COUNTDOWN */
+
+.countdown-section {
+    margin-top: 45px;
+}
+
+
+.countdown-title {
+    color: #dcb9ff;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.time-box {
+    min-width: 120px;
+
+    padding: 18px 10px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(216,164,255,0.25);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,0.03),
+        0 0 20px rgba(143,63,255,0.12);
+}
+
+
+.time-box span {
+    display: block;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #b76cff;
+}
+
+
+.time-box small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #cdb4df;
+}
+
+
+.colon {
+    font-size: 35px;
+
+    color: #c17cff;
+
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+
+/* CONCERT INFO */
+
+.concert-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+.concert-info div {
+    padding: 15px 22px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.concert-info span {
+    font-size: 22px;
+}
+
+
+.concert-info p {
+    margin-top: 5px;
+
+    color: #ddd;
+}
+
+
+/* MESSAGE */
+
+.message {
+    margin-top: 45px;
+
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.055);
+
+    border: 1px solid rgba(216,164,255,0.2);
+
+    box-shadow: 0 0 30px rgba(136,65,255,0.12);
+}
+
+
+.heart {
+    font-size: 45px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+.message h2 {
+    margin: 12px 0 20px;
+
+    font-size: 30px;
+
+    color: #e2baff;
+}
+
+
+.message p {
+    max-width: 600px;
+
+    margin: 12px auto;
+
+    line-height: 1.7;
+
+    color: #d8d0df;
+}
+
+
+.message .love {
+    color: #e3bfff;
+
+    font-weight: bold;
+}
+
+
+/* MUSIC */
+
+#musicButton {
+    margin-top: 30px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background: linear-gradient(
+        90deg,
+        #6b21a8,
+        #a855f7
+    );
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(168,85,247,0.4);
+
+    transition: 0.3s;
+}
+
+
+#musicButton:hover {
+    transform: scale(1.05);
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+
+    color: #8e7c9c;
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 25px 14px 40px;
+    }
+
+    .bts-card {
+        height: 300px;
+    }
+
+    .card-content h2 {
+        font-size: 35px;
+        letter-spacing: 5px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .time-box {
+        min-width: 70px;
+        padding: 13px 5px;
+    }
+
+    .time-box span {
+        font-size: 27px;
+    }
+
+    .time-box small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .colon {
+        font-size: 22px;
+    }
+
+}
